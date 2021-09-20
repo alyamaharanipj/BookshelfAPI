@@ -89,7 +89,7 @@ export const getAllBooksHandler = (request, h) => {
   } else if (finished !== undefined) {
     filteredBooks = filteredBooks.filter((book) => book.finished == finished);
   } else if (name !== undefined) {
-    filteredBooks = filteredBooks.filter((book) => book.name.toLowerCase().includes('dicoding'));
+    filteredBooks = filteredBooks.filter((book) => book.name.toLowerCase().includes(name.toLowerCase()));
   }
 
   // Assign booksData

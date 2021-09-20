@@ -1,4 +1,7 @@
-import {addBookHandler} from './handler.js';
+/* Created by: Alya Maharani P J. */
+
+// eslint-disable-next-line max-len
+import {addBookHandler, getAllBooksHandler, getBookByIdHandler, editBookByIdHandler, deleteBookByIdHandler} from './handler.js';
 
 const routes = [
   {
@@ -6,7 +9,26 @@ const routes = [
     path: '/books',
     handler: addBookHandler,
   },
+  {
+    method: 'GET',
+    path: '/books',
+    handler: getAllBooksHandler,
+  },
+  {
+    method: 'GET',
+    path: '/books/{id}',
+    handler: getBookByIdHandler,
+  },
+  {
+    method: 'PUT',
+    path: '/books/{id}',
+    handler: editBookByIdHandler,
+  },
+  {
+    method: 'DELETE',
+    path: '/books/{id}',
+    handler: deleteBookByIdHandler,
+  },
 ];
 
 export default routes;
-

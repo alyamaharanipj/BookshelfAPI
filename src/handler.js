@@ -74,13 +74,27 @@ export const addBookHandler = (request, h) => {
 };
 
 // Get All Books
-export const getAllBooksHandler = () => {
+export const getAllBooksHandler = (request, h) => {
+  const {name, reading, finished} = request.query;
+
   // New Array to save books data with only id, name, and publisher property
+  let filteredBooks = [];
   const booksData = [];
 
+  filteredBooks = books;
+
+  // Filter based on query parameter
+  if (reading !== undefined) {
+    filteredBooks = filteredBooks.filter((book) => book.reading == reading);
+  } else if (finished !== undefined) {
+    filteredBooks = filteredBooks.filter((book) => book.finished == finished);
+  } else if (name !== undefined) {
+    filteredBooks = filteredBooks.filter((book) => book.name.toLowerCase().includes('dicoding'));
+  }
+
   // Assign booksData
-  if (books.length != 0) {
-    books.forEach((book) => {
+  if (filteredBooks.length != 0) {
+    filteredBooks.forEach((book) => {
       const bookFormat = {
         id: book.id,
         name: book.name,

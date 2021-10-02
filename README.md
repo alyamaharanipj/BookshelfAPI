@@ -8,3 +8,6 @@ This project is intended to complete Dicoding Academy Certification of 'Belajar 
 3. Read detail of a book
 4. Update a specific book
 5. Delete a specific book
+
+# Screenshot
+![alt tag](https://github.com/alyamaharanipj/FCC-Random-Quote-Machine/blob/main/public/images/tested api.png)
